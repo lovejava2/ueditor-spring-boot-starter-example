@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+
+    <link href="../js/element-ui/unpkg.index.css" rel="stylesheet" type="text/css">
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+
+    <script src="../js/element-ui/vue.min.js" type="text/javascript"></script>
+    <script src="../js/element-ui/unpkg.index.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.3.1.js" type="text/javascript"></script>
+    <!--<script src="../js/prefixfree.min.js" type="text/javascript"></script>-->
+    <script src="../js/md5.js"></script>
+    <script src="../js/plugins/layer/layer.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/login.js" type="text/javascript"></script>
+    <!--<script src="${ctx}/js/cookie.js"></script>-->
+</head>
+<body>
+<section id="vueBox" :style="{height:loginHeight}" class="login-box">
+    <div class="form-box" :style="{'margin-top':marginHeight}">
+        <el-form :model="form">
+            <h4 class="headline">登录</h4>
+            <el-form-item>
+                <el-input v-model="form.username" placeholder="用户名"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-input type="password" v-model="form.passwd" placeholder="密码"></el-input>
+            </el-form-item>
+
+            <el-button class="btn-login" @click="login('form')">登录</el-button>
+        </el-form>
+    </div>
+</section>
+
+</body>
+</html>

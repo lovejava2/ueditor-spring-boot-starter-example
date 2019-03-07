@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" >
+<head th:include="include :: header">
+    <meta charset="utf-8">
+</head>
+<link th:href="@{/js/element-ui/unpkg.index.css}" rel="stylesheet">
+<style>
+    .xhr-up-box{ border-radius: 5px;}
+
+</style>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">选择系统：</label>
+                            <div class="col-sm-8">
+                                <select  class="form-control xhr-bnt-w200 fl searchableSelect" name="platform" id="platform" >
+                                    <option value="1" >--安卓--</option>
+                                    <option value="2" >--IOS--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">当前版本：</label>
+                            <div class="col-sm-8">
+                                <input id="ver" name="ver" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">更新方式：</label>
+                            <div class="col-sm-8">
+                                <select  class="form-control xhr-bnt-w200 fl searchableSelect" name="force" id="force" >
+                                    <option value="1" >--推荐更新--</option>
+                                    <option value="2" >--强制更新--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">产品名称：</label>
+                            <div class="col-sm-8">
+                                <input id="prod_name" name="prod_name" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">包名：</label>
+                            <div class="col-sm-8">
+                                <input id="bundle_id" name="bundle_id" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">更新内容：</label>
+                            <div class="col-sm-8">
+                                <input id="instructions" name="instructions" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">更新地址：</label>
+                            <div class="col-sm-8">
+                                <input id="url" name="url" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" onclick="save()">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+
+<script type="text/javascript" src="/js/version/edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" >
+<head th:include="include :: header"></head>
+<link th:href="@{/js/element-ui/unpkg.index.css}" rel="stylesheet">
+<style>
+    .xhr-up-box{ border-radius: 5px;}
+
+</style>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <input type="text" id="noticeId" name="noticeId" hidden>
+                        <div class="form-group ">
+                            <label class="col-sm-3 control-label">开始时间：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" readonly  id="startTime" name="startTime"  placeholder="开始时间">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="col-sm-3 control-label">结束时间：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" readonly  id="endTime" name="endTime"  placeholder="结束时间">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">公告标题：</label>
+                            <div class="col-sm-8">
+                                <input id="title" name="title" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">url：</label>
+                            <div class="col-sm-8">
+                                <input id="url" name="url" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">显示位置：</label>
+                            <div class="col-sm-8">
+                                <select  class="form-control xhr-bnt-w200 fl searchableSelect" name="showarea" id="showarea" >
+                                    <option value="1" >--消息中心--</option>
+                                    <option value="2" >--直播房间--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">公告内容：</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" name="detail" id="detail" maxlength="50"
+                                          placeholder="请输入详情" rows="3" ></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" onclick="save()">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+
+<script type="text/javascript" src="/js/notice/edit.js"></script>
+</body>
+</html>

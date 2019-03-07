@@ -1,0 +1,11 @@
+/*登录页面*/
+body{padding:0;border-top:1px;}
+.login-box{padding-top: 1px;background: url("../images/login-bg.jpg") no-repeat center;background-size: cover;}
+.form-box{width: 440px;margin-left: auto;margin-right: auto;}
+.form-box .logo{text-align: center;color:#fff;font-size: 28px;margin-bottom: 64px;}
+.form-box .logo img{display:block;margin:0 auto 18px auto; }
+.form-box .el-form{background: #fff;border-radius: 5px;padding:35px 60px 88px 60px;}
+.form-box .headline{font-size: 16px;text-align: center;padding-bottom: 24px;border-bottom: 1px solid #eaeaea;margin-bottom: 54px;}
+.form-box  .el-input__inner{background-color: #f4f4f4;}
+.form-box .btn-login{display: block;width: 100%;background-color:#3ca0ec;border-color:#3ca0ec;color:#fff;margin-top: 54px;}
+.form-box .btn-login:hover{background-color: #40acfd;border-color: #40acfd;}

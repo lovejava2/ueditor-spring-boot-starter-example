@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" >
+<head th:include="include :: header">
+    <meta charset="utf-8">
+</head>
+<link th:href="@{/css/plugins/webuploader/webuploader.css}" rel="stylesheet">
+<link th:href="@{/js/element-ui/unpkg.index.css}" rel="stylesheet">
+<style>
+    .xhr-up-box{ border-radius: 5px;}
+
+</style>
+
+<script th:inline="javascript">
+    var type = [[${type}]];
+</script>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <div class="form-group" id="anieffectaddressDiv" hidden>
+                            <label class="col-sm-3 control-label">动态图：</label>
+                            <div class="col-sm-8">
+                                <ul class="el-upload-list el-upload-list--picture" id="anieffectaddressList">
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="form-group" id="iconDiv" hidden>
+                            <label class="col-sm-3 control-label">图片：</label>
+                            <div class="col-sm-8">
+                                <ul class="el-upload-list el-upload-list--picture" id="iconList">
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">礼物名称：</label>
+                            <div class="col-sm-8">
+                                <input id="gname" name="gname" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">是否启用：</label>
+                            <div class="col-sm-8">
+                                <!--<input id="gname" name="gname" class="form-control" type="text" required>-->
+                                <select  class="form-control xhr-bnt-w200 fl searchableSelect" name="visible" id="visible" >
+                                    <option value="0" >--否--</option>
+                                    <option value="1" >--是--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">礼物属性：</label>
+                            <div class="col-sm-8">
+                                <!--<input id="gname" name="gname" class="form-control" type="text" required>-->
+                                <select  class="form-control xhr-bnt-w200 fl searchableSelect" name="gift_type" id="gift_type" >
+<!--                                    <option value="0" >&#45;&#45;幸运礼物&#45;&#45;</option>
+                                    <option value="1" >&#45;&#45;普通礼物&#45;&#45;</option>
+                                    <option value="2" >&#45;&#45;奢侈礼物&#45;&#45;</option>-->
+                                    <th:block th:each="show:${typeList}">
+                                        <option th:text="${show.type_name}" th:value="${show.typeid}"></option>
+                                    </th:block>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="type_scli" style="visibility:hidden">
+                            <label class="col-sm-3 control-label">上传动效：</label>
+                            <div class="col-sm-8">
+                                <div class="xhr-up-box">
+                                    <div class="xhr-up-img">
+                                    </div>
+                                    <div>
+                                        <div class="btn " id="upload_report_fj_dt">上传动效</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <ul class="el-upload-list el-upload-list--picture" id="spsxList2">
+
+                            </ul>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">礼物价格：</label>
+                            <div class="col-sm-8">
+                                <input id="price" name="price" class="form-control" type="number" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">系统收益：</label>
+                            <div class="col-sm-8">
+                                <input id="sys_getgold" name="sys_getgold" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">对方收益：</label>
+                            <div class="col-sm-8">
+                                <input id="user_getgold" name="user_getgold" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">用户积分：</label>
+                            <div class="col-sm-8">
+                                <input id="exp" name="exp" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">添加图片：</label>
+                            <div class="col-sm-8">
+                                <div class="xhr-up-box">
+                                    <div class="xhr-up-img">
+                                    </div>
+                                    <div>
+                                        <div class="btn " id="upload_report_fj">添加图片</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <ul class="el-upload-list el-upload-list--picture" id="spsxList">
+
+                            </ul>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备注说明：</label>
+                            <div class="col-sm-8">
+                                <input id="remark" name="remark" class="form-control" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" onclick="save()">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+
+<script th:src="@{/js/plugins/webuploader/webuploader.min.js}"></script>
+<script type="text/javascript" src="/js/gift/edit.js"></script>
+</body>
+</html>

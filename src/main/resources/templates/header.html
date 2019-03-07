@@ -1,0 +1,35 @@
+<!DOCTYPE html  SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="header" >
+	    
+	    <meta name="keywords" content="练习">
+        <meta name="description" content="练习">
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+		<link th:href="@{/css/font-awesome.min.css?v=4.4.0}" rel="stylesheet">
+		<link th:href="@{/css/plugins/toastr/toastr.min.css}" rel="stylesheet">
+		<link th:href="@{/css/animate.css}" rel="stylesheet">
+		<link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+
+		<!-- 全局js -->
+		<script th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
+		<script th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
+		<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+		<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+		<script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+		<!-- 自定义js -->
+		<script th:src="@{/js/app.js?v=4.1.0}"></script>
+		<script th:src="@{/js/contabs.js}"></script>
+		<!-- 第三方插件 -->
+		<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+		<!-- vue -->
+		<script th:src="@{/js/element-ui/vue.min.js}"></script>
+		<!--<script th:src="@{/js/appjs/oa/webSocket/sockjs.min.js}"></script>-->
+		<!--<script th:src="@{/js/appjs/oa/webSocket/stomp.min.js}"></script>-->
+		<!-- Toastr script -->
+		<script th:src="@{/js/plugins/toastr/toastr.min.js}"></script>
+
+	</div>
+</body>
+</html>

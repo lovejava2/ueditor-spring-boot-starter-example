@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>列表</title>
+	<link th:href="@{/css/bootstrap.min.css?v=3.3.6}" rel="stylesheet">
+	<link th:href="@{/css/animate.css}" rel="stylesheet">
+	<link th:href="@{/css/style.css?v=4.1.0}" rel="stylesheet">
+	<link th:href="@{/css/plugins/jqgrid/ui.jqgrid.css?0820}" rel="stylesheet">
+	<link th:href="@{/css/xhr.css}" rel="stylesheet">
+
+	<!-- 全局js -->
+	<script th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
+	<script th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
+	<script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+
+	<!-- jqGrid -->
+	<script th:src="@{/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820}"></script>
+	<script th:src="@{/js/plugins/jqgrid/jquery.jqGrid.min.js?0820}"></script>
+
+
+	<script th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
+	<script th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
+	<!-- 自定义js -->
+	<script th:src="@{/js/content.js?v=1.0.0}"></script>
+	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/plugins/layer/layer.js"></script>
+	<script th:src="@{/js/common.js}"></script>
+	<style>
+		input.checkbox{ margin-left: 5px !important; margin-right: 0px !important; width: 13px; float: left; display: inline-block; margin-top: 9px !important;}
+	</style>
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content  animated fadeInRight">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ibox ">
+				<!--				<form id="role_main_query_form">
+                                    <div class="xhr-seacher-select">
+
+                                        <ul>
+                                            <li><span class="fl xhr-seacher-sp1">主播ID：</span>
+                                                <input type="text" class="form-control xhr-bnt-w200 fl" id="uid" >
+                                            </li>
+                                            <li><button type="button" onclick="reloadGrid()" class="btn  btn-primary">查询</button>
+
+                                            <li><button type="button" onclick="resetForm()"  class="btn  btn-info">重置</button></li>
+                                        </ul>
+                                    </div>
+                                </form>-->
+
+				<div class="ibox-content">
+					<div>
+						<button type="button" onclick="add()"  class="btn btn-w-m btn-primary">添加</button>
+					</div>
+					<br>
+					<div class="jqGrid_wrapper">
+						<table id="jqGrid"></table>
+						<div id="jqGridPager"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" th:src="@{/js/jq.ext.common.js}" ></script>
+<script type="text/javascript" th:src="@{/js/anchor/list.js}" ></script>
+
+
+</body>
+
+</html>
+
