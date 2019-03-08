@@ -12,7 +12,7 @@ $(function(){
             { label: 'id', name: 'id', index: 'id', width: 50, key: true,hidden:true },
             { label: '平台', name: 'platform', index: 'platform', width: 80,sortable:false,formatter:function(cellvalue, options, rowObject){
                     var html = "";
-                    if(cellvalue == '1'){
+                    if(cellvalue == 'android'){
                         html = "安卓";
                     }else{
                         html = "IOS";

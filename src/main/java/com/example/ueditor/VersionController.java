@@ -129,6 +129,11 @@ public class VersionController {
             Map<String, Object> map = new HashMap<String, Object>();
 
             if(platform != null){
+                if("1".equals(platform)){
+                    platform = "android";
+                }else {
+                    platform = "ios";
+                }
                 map.put("platform", platform);
             }
             if(ver != null){
@@ -205,6 +210,11 @@ public class VersionController {
             Map<String, Object> map = new HashMap<String, Object>();
 
             if(platform != null){
+               if("1".equals(platform)){
+                   platform = "android";
+               }else {
+                   platform = "ios";
+               }
                 map.put("platform", platform);
             }
             if(ver != null){

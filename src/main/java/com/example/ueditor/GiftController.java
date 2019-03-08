@@ -136,6 +136,7 @@ public class GiftController {
             String icon = paramJson.getString("icon");
             String price = paramJson.getString("price");
             String Anieffectaddress = paramJson.getString("Anieffectaddress");
+            Integer Anieffecttimes = paramJson.getInteger("Anieffecttimes");//动态礼物时长
             String exp = paramJson.getString("exp");
             String anchor_exp = paramJson.getString("anchor_exp");
             String anchor_getgold = paramJson.getString("anchor_getgold");
@@ -155,7 +156,13 @@ public class GiftController {
             long timestamp = ((ts.getTime())/1000);
 
             //保存接口
-            String s = "Anieffectaddress:"+Anieffectaddress+",anchor_exp:"+anchor_exp+",anchor_getgold:"+anchor_getgold
+//            String s = "Anieffectaddress:"+Anieffectaddress+",anchor_exp:"+anchor_exp+",anchor_getgold:"+anchor_getgold
+//                    +",country:"+country+"exp"+exp+",gift_type:"+gift_type+",gname:"+gname+",icon:"+icon
+//                    +",price:"+price+",pos:"+pos+",remark:"+remark+",showarea:"+showarea+",sys_getgold:"+sys_getgold
+//                    +",timestamp:"+timestamp+",token:"+token
+//                    +",user_getgold:"+user_getgold+",visible:"+visible+",secret:"+secret;
+
+            String s = "Anieffecttimes"+Anieffecttimes+",Anieffectaddress:"+Anieffectaddress+",anchor_exp:"+anchor_exp+",anchor_getgold:"+anchor_getgold
                     +",country:"+country+"exp"+exp+",gift_type:"+gift_type+",gname:"+gname+",icon:"+icon
                     +",price:"+price+",pos:"+pos+",remark:"+remark+",showarea:"+showarea+",sys_getgold:"+sys_getgold
                     +",timestamp:"+timestamp+",token:"+token
@@ -164,6 +171,9 @@ public class GiftController {
             String sign = Md5Util.EncoderByMd5(s);
             String urlStr = StaticEntity.staticUrl+"/lobby/cms_add_gift";
             Map<String, Object> map = new HashMap<String, Object>();
+            if(Anieffecttimes != null){
+                map.put("Anieffecttimes",Anieffecttimes);
+            }
             if(Anieffectaddress != null){
                 map.put("Anieffectaddress", Anieffectaddress);
             }

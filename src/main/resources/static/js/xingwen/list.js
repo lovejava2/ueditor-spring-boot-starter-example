@@ -40,7 +40,7 @@ $(function(){
                     debugger;
                     html = html + " <a href='javascript:void(0)' onclick='showEdit("+obj+")'>查看</a><br/>";
 
-                    html = html + " <a href='javascript:void(0)' onclick='del("+obj+")'>删除</a><br/>";
+                    //html = html + " <a href='javascript:void(0)' onclick='del("+obj+")'>删除</a><br/>";
 
                     if(uid == addUser){
                         html = html + " <a href='javascript:void(0)' onclick='edit("+obj+")'>"+edit+"</a><br/> <a href='javascript:void(0)' onclick='del("+obj+")'>"+del+"</a><br/>";
@@ -134,10 +134,6 @@ function del(obj) {
                 debugger;
                 if(res.code == 0){
                     alert("删除成功", function (index) {
-                        $("#jqGrid").trigger("reloadGrid");
-                    });
-                }else{
-                    alert("您没有权限", function (index) {
                         $("#jqGrid").trigger("reloadGrid");
                     });
                 }

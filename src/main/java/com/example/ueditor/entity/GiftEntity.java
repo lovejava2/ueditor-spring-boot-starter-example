@@ -18,7 +18,7 @@ public class GiftEntity {
     private String pos;
     private String price;
     private String Anieffectaddress;
-    private String Anieffecttimes;
+    private String Anieffecttimes;//动效时长
     private String showarea;
     private String exp;
     private String user_getgold;

@@ -5,8 +5,10 @@ $(function () {
     var name1 = $("#gift_type").find("option:selected").text();
     if(name1.indexOf("奢侈礼物") != -1){
         $("#type_scli").css("visibility","visible");
+       // $("#anieffecttimes").css("visibility","visible");
     }else{
         $("#type_scli").css("visibility","hidden");
+       // $("#anieffecttimes").css("visibility","hidden");
     }
 
     $("#gift_type").change(function () {
@@ -14,8 +16,10 @@ $(function () {
         var name = $("#gift_type").find("option:selected").text();
         if(name.indexOf("奢侈礼物") != -1){
             $("#type_scli").css("visibility","visible");
+          //  $("#anieffecttimes").css("visibility","visible");
         }else{
             $("#type_scli").css("visibility","hidden");
+          //  $("#anieffecttimes").css("visibility","hidden");
         }
 
     })
@@ -49,7 +53,7 @@ function save() {
     var user_getgold = $("#user_getgold").val();//对方收益
     var exp = $("#exp").val();//用户积分
     var remark = $("#remark").val();//备注
-
+    var Anieffecttimes = $("#upload_report_fj_dttm").val();//动态时长
 
 
     var params = {};
@@ -64,6 +68,7 @@ function save() {
     params.exp = exp;
     params.remark = remark;
     params.gift_type = gift_type;
+    params.Anieffecttimes=Anieffecttimes;
     $.ajax({
         url: "/gift/save",
         method: "post",
